@@ -9,7 +9,7 @@ var word = Console.ReadLine().ToLower();
 
 var counter = 0;
 
-using (StreamReader reader = File.OpenText(".\\wordList.txt"))
+using (StreamReader reader = File.OpenText("wordList.txt"))
 {
     String line;
     while ((line = reader.ReadLine()) is not null)

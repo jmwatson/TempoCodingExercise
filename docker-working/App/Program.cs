@@ -1,27 +1,23 @@
-﻿Console.WriteLine("Enter a search word:");
-var word = Console.ReadLine().ToLower();
+﻿// Originally I was going to take the word as a command line arg but
+// decided to change it to user input instead as that would be easier
+// for the end user to setup and use.
+Console.WriteLine("Enter a search word:");
+var searchTerm = Console.ReadLine().ToLower();
 
-// if (argv.Length != 2)
-// {
-//     Console.WriteLine("Usage: dotnet run -- <word>");
-//     return;
-// }
+var count = 0;
 
-var counter = 0;
+// This assumes the file is laid out with one word per line.
+// count = File.ReadLines("wordList.txt")
+//     .Count(line => line == searchTerm);
 
-using (StreamReader reader = File.OpenText("wordList.txt"))
-{
-    String line;
-    while ((line = reader.ReadLine()) is not null)
-    {
-        // if (line == argv[0])
-        // Console.WriteLine(line);
-        if (line == word)
-        {
-            ++counter;
-            // Console.WriteLine($"########counted########   {counter}");
-        }
-    }
-}
-// Console.WriteLine($"{argv[0]} found {counter} times.");
-Console.WriteLine($"{word} found {counter} times.");
+// This takes an unformated file and splits it into words which
+// are then checked against the search term and counted.
+count = File.ReadLines("wordList.txt")
+    .SelectMany(line => line.Split(' '))
+    .Select(word => word.ToLower())
+    .Select(word => word.TrimEnd('.', ',', ';', ':', '?', '!'))
+    .Where(word => word != string.Empty)
+    .Count(word => word == searchTerm);
+
+Console.WriteLine($"{searchTerm} found {count} times.");
+

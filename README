@@ -1,0 +1,6 @@
+This console program reads a file that is space delimited and breaks it apart into individual words. It then takes as input via command line argument or via direct input in the console and counts how many instances of that word occur in the file. The program ignores punctuation so that it can find all the instances of the search term without missing some due to punctuation. It does not handle typos or text delimited in other ways, as creating all the options would take much longer than I committed to in my delivery estimate. One extra thing I added was the ability to take in the text file path so that it could read files in different places than the one I set up. 
+
+USAGE: 
+$ WordCounter 
+$ WordCounter [search term] 
+$ WordCounter [search term] [file path] 

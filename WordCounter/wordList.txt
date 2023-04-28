@@ -1,0 +1,17 @@
+man manual test, hello; world how
+many
+examples
+do
+you
+need
+to
+check
+the
+validity
+of
+this
+algorithm
+man
+test
+test
+all

@@ -2,3 +2,6 @@ docker-working/App/Dockerfile
 docker-working/App/.vscode/*
 docker-working/App/bin/*
 docker-working/App/obj/*
+WordCounter/.vscode/*
+WordCounter/bin/*
+WordCounter/obj/*

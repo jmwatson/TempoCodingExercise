@@ -5,3 +5,4 @@ docker-working/App/obj/*
 WordCounter/.vscode/*
 WordCounter/bin/*
 WordCounter/obj/*
+.vscode/*
